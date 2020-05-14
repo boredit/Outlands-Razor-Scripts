@@ -1,0 +1,69 @@
+#example: train magery from your storage shelf
+#1.)create a variable on the Scripts>Options> tab named 'shelf' and target your shelf
+#2.)set current loadout to include 10 (minimul) of each reagent.
+#3.)on Display/Counters, remove the " ' " from "Spider's Silk" so it appears "Spiders Silk"
+#4.)on the same tab, ensure that the counters for SS, BP, and MR are enabled.
+#Note: the count command does not process punctuation in "" like steam did
+###########################################################################################
+#journal cleanup
+if insysmsg 'enter a meditative'
+endif
+if insysmsg 'too many followers'
+endif
+#count regs and restock from shelf
+if count 'Spiders Silk' < 5
+    menu shelf 1
+elseif count 'Black Pearl' < 5
+    menu shelf 1
+elseif count 'Mandrake Root' < 5
+    menu shelf 1
+endif
+#meditate if low on mana to summon elemental
+if mana < 50
+    while not insysmsg 'enter a meditative'
+        useskill 'meditation'
+        #there are 12 seconds between failure as far as I can tell
+        pause 12000
+    endwhile
+    while mana < maxmana
+    endwhile
+endif
+#begin training magery
+if hits < 69
+    cast 'greater heal'
+    wft
+    target 'self'
+    elseif hits > 69 and skill 'magery' < 40
+    overhead 'Train Magery up to 50 at a vendor'
+    stop
+    elseif hits > 69 and skill 'magery' < 60
+    cast 'mana drain'
+    wft
+    target 'self'
+    elseif hits > 69 and skill 'magery' < 70
+    cast 'energy bolt'
+    wft
+    target 'self'
+    wait 1800
+    elseif hits > 69 and skill 'magery' < 85
+    cast 'flamestrike'
+    wft
+    target 'self'
+    wait 2000
+    elseif hits > 69 and skill 'magery' < 101
+    cast 'air elemental'
+    wait 500
+    if insysmsg 'too many followers'
+        say 'an air elemental release'
+        wait 500
+        cast 'Air Elemental'
+        wait 6250
+    else
+        wait 6520
+endif
+elseif hits > 69 and skill 'magery' == 100
+    overhead 'Magery Complete!'
+    stop
+endif
+#uhh... loop
+loop
