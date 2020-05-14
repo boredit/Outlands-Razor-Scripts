@@ -4,7 +4,7 @@
 #Hotkey.     
 if lhandempty and rhandempty
    overhead 'Hands are Empty!' 55
-#create a dress profile anmed Weapon on Arm/Dress Tab in razor    
+#create a dress profile named Weapon on Arm/Dress Tab in razor    
    hotkey 'Dress: Weapon'
    #hotkey 'Attack Last Target'
    script 'bandage self'
