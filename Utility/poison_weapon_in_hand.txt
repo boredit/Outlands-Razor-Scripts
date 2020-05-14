@@ -1,0 +1,19 @@
+#sample script for poisoning weapon in hand
+#clear sysmsg from last manual application
+if insysmsg 'You apply the poison.'
+endif
+#look for poison pots | this can be done with razor counters as well using 'count/counter'
+if not findtype 'Green Potion' true
+    overhead 'You are out of poison' 55
+    stop
+endif
+#poison your weapon
+overhead "Poisoning..." 55
+menu righthand 0
+#wait for poison to be applied
+while not insysmsg 'You apply the poison.'
+    wait 200
+endwhile
+overhead '...Poisoned!' 55
+
+

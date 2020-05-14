@@ -1,0 +1,4 @@
+#example: use shield to taunt your current target
+dclick lefthand
+wft
+hotkey 'last target' 

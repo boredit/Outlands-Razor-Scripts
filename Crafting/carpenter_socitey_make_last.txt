@@ -1,0 +1,28 @@
+#example: continuously "make last" until societies job is completed
+#manually craft one of the society job items then run script
+#check for saws
+if not findtype 'saw'
+    headmsg 'You need some saws!'
+endif
+#stop when society job completed
+if insysmsg 'have completed'
+    overhead 'Society job completed!' 88
+    stop
+endif
+#weight watchers points
+if weight > 580
+    overhead 'You are getting a bit fat!' 99
+    stop
+endif
+#close the crafting gump
+gumpclose 949095101
+#carpentry make last item
+dclicktype 'saw'
+waitforgump 949095101
+gumpresponse 7
+waitforgump 949095101
+waitforgump 949095101
+#wait for it...
+pause 1500
+#umm... loop it.
+loop

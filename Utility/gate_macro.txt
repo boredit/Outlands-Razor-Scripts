@@ -1,0 +1,12 @@
+#############################
+#Use moongate within 2 tiles#
+#############################
+#close gump if you run through the gate
+gumpclose
+#find and use gate
+if findtype '3948' true
+    dclicktype '3948'
+    waitforgump
+    gumpresponse 2
+    wait 100
+endif

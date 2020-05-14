@@ -1,0 +1,17 @@
+#example of a UO Steam like arming
+#script. In practice it may be
+#easier to use a Toggle: <Dress>
+#Hotkey.     
+if lhandempty and rhandempty
+   overhead 'Hands are Empty!' 55
+#create a dress profile anmed Weapon on Arm/Dress Tab in razor    
+   hotkey 'Dress: Weapon'
+   #hotkey 'Attack Last Target'
+   script 'bandage self'
+else
+   overhead 'Crap in muh hands!' 55
+   hotkey 'Undress Both Hands'
+#example of one way to tab out
+   hotkey 'Toggle War/Peace'
+   hotkey 'Toggle War/Peace'
+endif

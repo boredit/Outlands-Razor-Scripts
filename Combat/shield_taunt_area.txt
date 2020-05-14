@@ -1,0 +1,4 @@
+#example: use shield to taunt mobs in the area
+dclick lefthand
+wft
+hotkey 'target self'
