@@ -5,7 +5,7 @@
 gumpclose
 #find and use gate
 if findtype '3948' true
-    dclicktype '3948'
+    dclicktype '3948' true
     waitforgump
     gumpresponse 2
     wait 100
