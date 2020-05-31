@@ -1,0 +1,82 @@
+#Train Alchemy from 90-120
+#place empty keg and empty bottle in backpack
+#Set variable named "shelf" on options tab and target your shelf.
+#Set variable named "empty_keg" on options tab and target your empty keg.
+#Set shelf loadout to retrieve 100 nightshade and at least 1 mortar and pestal
+#Enable Nightshade counter on Display/Counters tab
+#< 95 = GP | < 115 = DP | < 120 = LP#
+###################################################################################
+if not findtype 'mortar and pestle' true
+    overhead 'Restocking...[Mortar and Pestle]'
+    menu shelf 1
+endif
+if not findtype '3854' true
+    overhead 'Restocking...[Bottles]!'
+    menu shelf 1
+endif
+if not findtype 'keg' true
+    overhead 'Need a keg!'
+    stop
+endif
+if count 'nightshade' < 9
+	overhead 'Restocking...[Nightshade]
+    menu shelf 1
+endif
+#start making potions
+if skill 'alchemy' < 95
+    #make greater poison
+    dclicktype 'mortar and pestle'
+    gumpresponse 106
+    waitforgump 949095101
+    gumpresponse 202
+    waitforgump 949095101
+    waitforgump 949095101
+    pause 2000
+    gumpclose
+elseif skill 'alchemy' < 115
+    #make deadly
+    dclicktype 'mortar and pestle'
+    waitforgump 949095101
+    gumpresponse 106
+    waitforgump 949095101
+    gumpresponse 203
+    pause 2000
+    waitforgump 949095101
+    waitforgump 949095101
+    gumpclose
+elseif skill 'alchemy' < 120
+    #make lethal
+    dclicktype 'mortar and pestle'
+    waitforgump 949095101
+    gumpresponse 106
+    waitforgump 949095101
+    gumpresponse 204
+    waitforgump 949095101
+    waitforgump 949095101
+    pause 2000
+    gumpclose
+elseif skill 'alchemy' = 120
+    overhead 'Training complete!'
+    stop
+endif    
+#put potions in empty_keg
+if findtype 'Green Potion' true
+    lifttype 'Green Potion' 1
+    drop 'empty_keg' -1 -1 0
+    wait 500
+endif
+#put empty_keg in shelf when full or different type
+if insysmsg 'not hold any more'
+    overhead 'Stocking shelf...
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    wait 500
+elseif insysmsg 'bad idea to mix'
+    overhead 'Wrong type of potion!'
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    wait 500
+    replay
+endif    

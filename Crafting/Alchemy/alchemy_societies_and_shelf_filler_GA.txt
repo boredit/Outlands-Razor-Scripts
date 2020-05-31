@@ -1,0 +1,54 @@
+#example: make cure potions, fill a keg, drop the keg on your shelf.
+###Instructions###
+#1.)configure shelf profile to pull garlic bottles and mortars
+#2.)place empty keg in backpack
+#3.)on the Scripts>Options tab create a variable named 'empty_keg' and target the keg
+#4.)on the Scripts>Options tab create a variable named 'shelf' and target your shelf
+#5.)stand in front of shelf and make cure potions
+###Instructions###
+#make and shelve greater agility 
+
+#check for mortars
+if not findtype 'mortar and pestle' true
+    overhead 'Out of tools!'
+    stop
+endif
+#check for reagent
+if count 'bloodmoss' < 6
+    overhead 'Out of reagent!'
+    menu shelf 1
+endif
+#stop when society job completed
+if insysmsg 'have completed'
+    overhead 'Society job completed!' 88
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    stop
+endif
+#drops a pot on the keg to get started
+if findtype 'Blue Potion' true
+    lifttype 'Blue Potion' 1
+    drop 'empty_keg' -1 -1 0
+    wait 500
+endif
+if insysmsg 'not hold any more'
+    overhead 'Stocking shelf...
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    wait 500
+endif
+#make potion
+dclicktype 'mortar and pestle'
+waitforgump 949095101
+gumpresponse 104
+waitforgump 949095101
+gumpresponse 201
+waitforgump 949095101
+waitforgump 949095101
+pause 2000
+gumpclose
+#Uhh... loop.
+loop
+
