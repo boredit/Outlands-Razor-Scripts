@@ -2,6 +2,10 @@
 #mines until nearest nodes are exhausted. walk to next location then play again.
 #create dress agent on Arm/Dress tab named pickaxe, then convert to type
 while not dead
+    #world save pause
+    if insysmsg 'world is saving'
+        wait 4000
+    endif
     #stop if overweight | stops if exceeding 360 stones
     if weight >= 360
         overhead 'You are nearly overweight!' 55
