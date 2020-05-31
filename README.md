@@ -1,6 +1,6 @@
 # Outlands-Razor-Scripts
 This is a small repository of sample scripts for ClassicUO and Razor UOR:CE, as packaged and distributed by UO Outlands.
-The scripts all work, though many may not be immediately useful as they were created to demonstrate how one could achieve a goal using the new Razor the language described in the Razor Scripting Guide.
+The scripts all worked when written, though some may not be immediately useful as they were created to demonstrate how one could achieve a goal using the new Razor the language described in the Razor Scripting Guide.
 
 Razor Scripting Guide: http://www.uor-razor.com/guide/
 
