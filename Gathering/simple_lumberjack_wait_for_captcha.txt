@@ -1,0 +1,45 @@
+#a simple lumberjack macro
+#equip a hatchet
+if lhandempty
+dclicktype '3908'
+wait 1000
+endif
+#use hatchet for the first time
+hotkey 'use item in hand'
+wft
+target 'self'
+wait 500
+#begin captcha resilient loop
+while not dead
+    #world save pause
+    if insysmsg 'world is saving'
+        wait 4000
+    endif
+    #turn logs in to boards
+    while findtype 7133 
+        usetype 7133
+    endwhile
+    #stop if over weight
+    if weight >= 580
+        overhead 'You are over weight!' 55
+        stop
+    endif
+    #captcha resilient use of hatchet
+    if insysmsg 'chop some'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    endif
+    if insysmsg 'fail'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    endif
+    #stop trying to mine when the node is exhausted
+    if insysmsg 'You do not see'
+        overhead 'Move along! Move along!' 55
+    stop
+    endif
+wait 500    
+endwhile
+
