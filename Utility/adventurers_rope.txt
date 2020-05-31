@@ -1,0 +1,10 @@
+#check for rope | rope ID 5370
+if not findtype 5370 
+    overhead 'You got no rope kid!'
+endif
+#use rope
+usetype 'rope'
+overhead 'Use the force Luke!' 55
+wft
+
+
