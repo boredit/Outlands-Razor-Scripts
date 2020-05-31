@@ -1,0 +1,4 @@
+#use skinning knife
+dclicktype 11552 true
+wft
+target 'self'
