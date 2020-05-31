@@ -17,7 +17,7 @@ endif
 #close the crafting gump
 gumpclose 949095101
 #carpentry make last item
-dclicktype 'saw'
+dclicktype 'saw' true
 waitforgump 949095101
 gumpresponse 7
 waitforgump 949095101

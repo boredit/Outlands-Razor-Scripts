@@ -1,0 +1,28 @@
+#for tinker societies
+#manually craft one of the society job item then play
+#check for saws
+if not findtype 'tool kit'
+    headmsg 'You need some tools!'
+endif
+#stop when society job completed
+if insysmsg 'have completed'
+    overhead 'Society job completed!' 88
+    stop
+endif
+#weight watchers points
+if weight > 580
+    overhead 'You are getting a bit fat!' 99
+    stop
+endif
+#close the crafting gump
+gumpclose 949095101
+#carpentry make last item
+dclicktype 'tool kit' true
+waitforgump 949095101
+gumpresponse 7
+waitforgump 949095101
+waitforgump 949095101
+#wait for it...
+pause 1500
+#umm... loop it.
+loop

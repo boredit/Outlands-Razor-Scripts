@@ -1,0 +1,13 @@
+#simple hiding and stealth trainer | could be more efficient but isn't really needed
+if skill hiding < 100
+    useskill 'hiding'
+    wait 11000
+elseif skill 'stealth' < 100
+    if not hidden
+        useskill 'hiding'
+        wait 11000
+    endif
+    useskill 'stealth'
+    wait 11000
+endif
+loop

@@ -1,0 +1,18 @@
+#train music and peace with flute | flute type = 10245
+if insysmsg 'What instrument'
+    if findtype '10245' true
+        usetype '10245'
+    else 
+        overhead 'No Flutes!'
+        stop
+    endif
+endif
+if skill 'peacemakeing' < 120
+    useskill 'peacemaking'
+    wft
+    target 'self'
+elseif skill 'musicianship' < 120
+    usetype '10245'
+endif
+wait 10000
+loop

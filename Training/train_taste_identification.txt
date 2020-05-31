@@ -1,0 +1,8 @@
+#train taste identification
+if skill 'taste identification' < 100
+	skill 'tasteidentification'
+	waitfortarget
+	target 'backpack'
+	pause 5000
+endif
+loop

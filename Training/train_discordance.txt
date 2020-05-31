@@ -1,0 +1,16 @@
+#train discordance with flute | flute type: 10245
+if insysmsg 'What instrument'
+    if findtype '10245' true
+        usetype '10245' true
+    else 
+        overhead 'No Flutes!'
+        stop
+    endif
+endif
+if skill 'discordance' < 120
+    useskill 'discordance'
+    wft
+    target 'self'
+endif
+wait 10000
+loop

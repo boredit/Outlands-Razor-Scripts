@@ -10,7 +10,7 @@ elseif insysmsg 'trap tools of'
 endif
 #use locksmith training box
 if findtype '3712' true
-    dclicktype '3712'
+    dclicktype '3712' true
     waitforgump 736038070
 #train lockpicking first
     if skill 'lockpicking' < 100
