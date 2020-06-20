@@ -1,0 +1,72 @@
+#add all scrolls desired to Display/Counters tab
+#open scroll tome, fill up on scrolls.
+gumpclose
+useobject 'scroll_tome'
+waitforgump 4172222127
+#Get 25 Bless Scrolls
+gumpresponse 5
+waitforgump 4172222127
+while count 'Bless_Scroll' < 25
+    gumpresponse 10
+    waitforgump 4172222127
+    if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#Get 20 greater heal scrolls
+while count 'Greater_Heal' < 40
+    gumpresponse 22
+    waitforgump 4172222127
+      if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#Get 20 mana drain scrolls
+while count 'Mana_Drain' < 20
+    gumpresponse 24
+    waitforgump 4172222127
+      if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#next page
+gumpresponse 5
+waitforgump 4172222127
+#Get 100 mind blast scrolls
+while count 'Mind_Blast' < 100
+    gumpresponse 14
+    waitforgump 4172222127
+      if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#Get 10 energy bolt scrolls
+while count 'Energy_Bolt' < 10
+    gumpresponse 19
+    waitforgump 4172222127
+      if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#Get 10 explosion scrolls
+while count 'Explosion_Scroll' < 10
+    gumpresponse 20
+    waitforgump 4172222127
+      if insysmsg 'No spell scrolls'
+        overhead 'Out of Bless Scrolls' 55
+        stop
+    endif
+    wait 200
+endwhile
+#resupply from shelf
+menu 0x424BB4E1 1

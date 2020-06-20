@@ -1,0 +1,19 @@
+#sparring dummy heal script
+if not findtype 3617 true
+    for 3
+    walk west
+    endfor
+endif
+hotkey 'Toggle War/Peace'
+hotkey 'Toggle War/Peace'
+if hp < 80
+    usetype '3617'
+    wft
+    target 'self'
+    while not insysmsg 'finish applying'
+    endwhile
+endif
+if insysmsg 'finish applying'
+endif
+pause 4000
+loop

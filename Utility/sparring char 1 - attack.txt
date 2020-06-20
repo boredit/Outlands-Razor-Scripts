@@ -1,0 +1,18 @@
+#configure, set last target, press play
+#arm practice weapon of choice 5049:practice sword 5121:practice kryss 5044: practice club
+#type -info and target weapon to get graphic id
+if rhandempty
+    usetype 5044 true
+endif
+if skill 'mace fighting' = 100
+    for 3
+    walk east
+    endfor
+elseif skill 'mace fighting' < 100
+    say 'I am training! Go away!'
+endif
+attack lasttarget
+#anti-spam
+wait 20000
+#uhh...loop    
+loop
