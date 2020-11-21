@@ -11,7 +11,7 @@
 #check for mortars
 if not findtype 'mortar and pestle'
     overhead 'Out of tools!'
-    stop
+    menu shelf 1
 endif
 #check for Sulfurous Ash
 if count 'Sulfurous Ash' < 6
