@@ -1,4 +1,4 @@
-#example: make cure potions, fill a keg, drop the keg on your shelf.
+#example: make lethal poison, fill a keg, drop the keg on your shelf.
 ###Instructions###
 #1.)configure shelf profile to pull garlic bottles and mortars
 #2.)place empty keg in backpack
@@ -6,7 +6,7 @@
 #4.)on the Scripts>Options tab create a variable named 'shelf' and target your shelf
 #5.)stand in front of shelf and make cure potions
 ###Instructions###
-#make and shelf lethal poison
+#make and shelve lethal poison
 
 #check for mortars
 if not findtype 'mortar and pestle'

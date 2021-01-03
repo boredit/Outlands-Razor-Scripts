@@ -1,4 +1,4 @@
-#example: make cure potions, fill a keg, drop the keg on your shelf.
+#example: make greater magic resist, fill a keg, drop the keg on your shelf.
 ###Instructions###
 #1.)configure shelf profile to pull garlic bottles and mortars
 #2.)place empty keg in backpack
@@ -11,7 +11,7 @@
 #check for mortars
 if not findtype 'mortar and pestle' true
     overhead 'Out of tools!'
-    stop
+    menu shelf 1
 endif
 #check for reagent
 if count 'spiders silk' < 6

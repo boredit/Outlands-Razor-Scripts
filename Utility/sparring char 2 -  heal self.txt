@@ -1,4 +1,7 @@
 #sparring dummy heal script
+if not timerexists 'bandage'
+	createtimer 'bandage'
+endif
 if not findtype 3617 true
     for 3
     walk west
@@ -6,14 +9,10 @@ if not findtype 3617 true
 endif
 hotkey 'Toggle War/Peace'
 hotkey 'Toggle War/Peace'
-if hp < 80
+if hp < 80 and timer 'bandage' > 11000
     usetype '3617'
     wft
     target 'self'
-    while not insysmsg 'finish applying'
-    endwhile
-endif
-if insysmsg 'finish applying'
 endif
 pause 4000
 loop

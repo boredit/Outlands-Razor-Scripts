@@ -1,0 +1,51 @@
+#health maintenance script with timer
+#UO Outlands online (Other versions of Razor do not support timers)
+overhead 'Health maintenance started!'
+if not timerexists 'bandage'
+    createtimer 'bandage'
+endif
+if not timerexists 'heal_p'
+    createtimer 'heal_p'
+endif
+while not dead 
+    #heal pots
+    if hp < 46 and timer 'heal_p' > 10000
+        if findtype 'Yellow Potion' true
+        hotkey 'drink heal'
+        wait 500
+        settimer 'heal_p' 0    
+        endif
+    endif
+    #cure pots
+    if poisoned and hp < 75
+        if findtype 'Orange Potion' true
+        hotkey 'drink cure'
+            wait 500
+        endif
+    endif
+    #strength
+    if str < 100
+        if findtype 'White Potion' true
+        hotkey 'drink strength'
+        wait 500
+        endif
+    endif
+    #agility
+    if dex < 100
+        if findtype 'Blue Potion' true
+        hotkey 'drink agility'
+        wait 500
+        endif
+    endif
+    if insysmsg 'You cannot move!'
+        say '[pouch'
+    endif
+    #maintain health
+    if hp < 95 and timer 'bandage' > 11000
+        settimer 'bandage' 0
+        usetype 3617
+        wft
+        target self
+        wait 250
+    endif
+endwhile
