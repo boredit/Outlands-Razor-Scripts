@@ -12,10 +12,12 @@ while skill 'poisoning' < 120
 	if not timerexists 'poison'
 		createtimer 'poison'
 	endif
-	#ensure we have our katana
+	#ensure we have our katana and equip it so it doesn't get put in shelf
 	if not findtype 'katana' true
 		overhead 'Get a flipping katana will ya?'
 		stop
+	else
+		usetype 'katana' true
 	endif
 	#begin training poisoning
 	if skill 'poisoning' < 55
@@ -57,6 +59,12 @@ while skill 'poisoning' < 120
 		pause 650
 	endif
 	while skill 'poisoning' < 80
+		#empty backpack in to shelf to prevent bottle overload
+		if weight > 300
+			menu shelf 0
+			wft
+			target 'backpack'
+		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
@@ -128,6 +136,12 @@ while skill 'poisoning' < 120
 		pause 650
 	endif
 	while skill 'poisoning' < 100
+	#empty backpack in to shelf to prevent bottle overload
+		if weight > 300
+			menu shelf 0
+			wft
+			target 'backpack'
+		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
@@ -199,6 +213,12 @@ while skill 'poisoning' < 120
 		pause 650
 	endif
 	while skill 'poisoning' < 120
+	#empty backpack in to shelf to prevent bottle overload
+		if weight > 300
+			menu shelf 0
+			wft
+			target 'backpack'
+		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
