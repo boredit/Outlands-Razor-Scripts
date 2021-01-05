@@ -2,7 +2,7 @@
 #Train Poisoning from 50-120 using a katana and storage shelf
 #Set variable named "shelf" on options tab and target your shelf.
 #Put a katana in your backpack
-#50-80 use Greater Poison, 80-100 use Deadly Poison, 100-120 use lethal poison.
+#55-80 use Greater Poison, 80-100 use Deadly Poison, 100-120 use lethal poison.
 ###################################################################################
 while skill 'poisoning' < 120
 	#setup heal potion and poisoning timer
@@ -18,8 +18,8 @@ while skill 'poisoning' < 120
 		stop
 	endif
 	#begin training poisoning
-	if skill 'poisoning' < 50
-		overhead 'Go buy skill to 50 at NPC!'
+	if skill 'poisoning' < 55
+		overhead 'Get yourself to 55 Poisoning!'
 		stop
 	endif
 	#setup shelf to train with greater poison
@@ -60,12 +60,15 @@ while skill 'poisoning' < 120
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Orange Potion' true
 			overhead 'No cures! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Yellow Potion' true
 			overhead 'No heals! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'katana' true
 			overhead 'Get a flipping katana will ya?'
 			stop
@@ -128,12 +131,15 @@ while skill 'poisoning' < 120
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Orange Potion' true
 			overhead 'No cures! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Yellow Potion' true
 			overhead 'No heals! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'katana' true
 			overhead 'Get a flipping katana will ya?'
 			stop
@@ -196,12 +202,15 @@ while skill 'poisoning' < 120
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Orange Potion' true
 			overhead 'No cures! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'Yellow Potion' true
 			overhead 'No heals! Hitting the shelf' 55
 			menu shelf 1
+			wait 200
 		elseif not findtype 'katana' true
 			overhead 'Get a flipping katana will ya?'
 			stop
