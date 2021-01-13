@@ -25,9 +25,11 @@ while skill 'poisoning' < 120
 		overhead 'Get yourself to 55 Poisoning!'
 		stop
 	endif
+	wait 2000
 	#setup shelf to train with greater poison
 	if skill 'poisoning' < 80
 		dclick 'shelf'
+		wait 250
 		#clear loadout
 		waitforgump 3232825965
 		gumpresponse 16
@@ -61,6 +63,7 @@ while skill 'poisoning' < 120
 		gumpclose
 		pause 650
 	endif
+	wait 2000
 	while skill 'poisoning' < 80
 		#empty backpack in to shelf to prevent bottle overload
 		if weight > 300
@@ -105,8 +108,10 @@ while skill 'poisoning' < 120
 			settimer 'poison' 0
 		endif
 	endwhile
+	wait 2000
 	if skill 'poisoning' < 100
 		dclick 'shelf'
+		wait 250
 		#clear loadout
 		waitforgump 3232825965
 		gumpresponse 16
@@ -140,6 +145,7 @@ while skill 'poisoning' < 120
 		gumpclose
 		pause 650
 	endif
+	wait 2000
 	while skill 'poisoning' < 100
 	#empty backpack in to shelf to prevent bottle overload
 		if weight > 300
@@ -185,8 +191,10 @@ while skill 'poisoning' < 120
 			settimer 'poison' 0
 		endif
 	endwhile
+	wait 2000
 	if skill 'poisoning' < 120
 		dclick 'shelf'
+		wait 250
 		#clear loadout
 		waitforgump 3232825965
 		gumpresponse 16
@@ -220,6 +228,7 @@ while skill 'poisoning' < 120
 		gumpclose
 		pause 650
 	endif
+	wait 2000
 	while skill 'poisoning' < 120
 	#empty backpack in to shelf to prevent bottle overload
 		if weight > 300
@@ -265,6 +274,7 @@ while skill 'poisoning' < 120
 		endif
 	endwhile
 endwhile
+wait 2000
 if skill poisoning == 120
 	overhead 'You've done it!' 44
 	sysmsg 'You've really done it!' 33
