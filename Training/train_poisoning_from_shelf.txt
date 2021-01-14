@@ -70,6 +70,8 @@ while skill 'poisoning' < 120
 			menu shelf 0
 			wft
 			target 'backpack'
+			wait 250
+			gumpclose
 		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
@@ -153,6 +155,7 @@ while skill 'poisoning' < 120
 			wft
 			target 'backpack'
 			wait 250
+			gumpclose
 		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
@@ -235,6 +238,8 @@ while skill 'poisoning' < 120
 			menu shelf 0
 			wft
 			target 'backpack'
+			wait 250
+			gumpclose
 		endif
 		if not findtype 'Green Potion' true
 			overhead 'No poison! Hitting the shelf!' 55
