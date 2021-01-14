@@ -6,282 +6,285 @@
 #55-80 use Greater Poison, 80-100 use Deadly Poison, 100-120 use lethal poison.
 ###################################################################################
 while skill 'poisoning' < 120
-	#setup heal potion and poisoning timer
-	if not timerexists 'heal_p'
-		createtimer 'heal_p'
-	endif
-	if not timerexists 'poison'
-		createtimer 'poison'
-	endif
-	#ensure we have our katana and equip it so it doesn't get put in shelf
-	if not findtype 'katana' true
-		overhead 'Get a flipping katana will ya?'
-		stop
-	else
-		usetype 'katana' true
-	endif
-	#begin training poisoning
-	if skill 'poisoning' < 55
-		overhead 'Get yourself to 55 Poisoning!'
-		stop
-	endif
-	wait 2000
-	#setup shelf to train with greater poison
-	if skill 'poisoning' < 80
-		dclick 'shelf'
-		wait 250
-		#clear loadout
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		#edit loadout
-		gumpresponse 5
-		#heals
-		waitforgump 3232825965
-		gumpresponse 200
-		waitforgump 3232825965
-		#increase heal to 10
-		gumpresponse 215
-		waitforgump 3232825965
-		#cures
-		gumpresponse 201
-		waitforgump 3232825965
-		#increase cure to 10 
-		gumpresponse 216
-		waitforgump 3232825965
-		gumpresponse 207
-		#increase GP by 1 per click
-		waitforgump 3232825965
-		for 9
-			gumpresponse 222
-			waitforgump 3232825965
-		endfor
-		gumpresponse 5
-		waitforgump 3232825965
-		gumpclose
-		pause 650
-	endif
-	wait 2000
-	while skill 'poisoning' < 80
-		#empty backpack in to shelf to prevent bottle overload
-		if weight > 300
-			menu shelf 0
-			wft
-			target 'backpack'
-			wait 250
-			gumpclose
-		endif
-		if not findtype 'Green Potion' true
-			overhead 'No poison! Hitting the shelf!' 55
-			menu shelf 1
-			wait 200
-		elseif not findtype 'Orange Potion' true
-			overhead 'No cures! Hitting the shelf' 55
-			menu shelf 1
-			wait 200
-		elseif not findtype 'Yellow Potion' true
-			overhead 'No heals! Hitting the shelf' 55
-			menu shelf 1
-			wait 200
-		elseif not findtype 'katana' true
-			overhead 'Get a flipping katana will ya?'
-			stop
-		endif
-		#heal if hurt
-		if hp < 75 and timer 'heal_p' > 11000
-			hotkey 'drink heal'
-			settimer 'heal_p' 0
-			wait 250
-		endif
-		#cure if poisoned
-		while poisoned
-			hotkey 'drink cure'
-			wait 250
-		endwhile
-		#train poisoning
-		if timer 'poison' > 4600
-			useskill 'poisoning'
-			wft 
-			targettype 'Green Potion'
-			wft 
-			targettype 'katana' true
-			settimer 'poison' 0
-		endif
-	endwhile
-	wait 2000
-	if skill 'poisoning' < 100
-		dclick 'shelf'
-		wait 250
-		#clear loadout
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		#edit loadout
-		gumpresponse 5
-		#heals
-		waitforgump 3232825965
-		gumpresponse 200
-		waitforgump 3232825965
-		#increase heal to 10
-		gumpresponse 215
-		waitforgump 3232825965
-		#cures
-		gumpresponse 201
-		waitforgump 3232825965
-		#increase cure to 10 
-		gumpresponse 216
-		waitforgump 3232825965
-		gumpresponse 208
-		#increase DP to 10
-		waitforgump 3232825965
-		for 9
-			gumpresponse 223
-			waitforgump 3232825965
-		endfor
-		gumpresponse 5
-		waitforgump 3232825965
-		gumpclose
-		pause 650
-	endif
-	wait 2000
-	while skill 'poisoning' < 100
-	#empty backpack in to shelf to prevent bottle overload
-		if weight > 300
-			menu shelf 0
-			wft
-			target 'backpack'
-			wait 250
-			gumpclose
-		endif
-		if not findtype 'Green Potion' true
-			overhead 'No poison! Hitting the shelf!' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'Orange Potion' true
-			overhead 'No cures! Hitting the shelf' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'Yellow Potion' true
-			overhead 'No heals! Hitting the shelf' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'katana' true
-			overhead 'Get a flipping katana will ya?'
-			stop
-		endif
-		#heal if hurt
-		if hp < 75 and timer 'heal_p' > 11000
-			hotkey 'drink heal'
-			settimer 'heal_p' 0
-			wait 250
-		endif
-		#cure if poisoned
-		while poisoned
-			hotkey 'drink cure'
-			wait 250
-		endwhile
-		#train poisoning
-		if timer 'poison' > 4600
-			useskill 'poisoning'
-			wft 
-			targettype 'Green Potion'
-			wft 
-			targettype 'katana' true
-			settimer 'poison' 0
-		endif
-	endwhile
-	wait 2000
-	if skill 'poisoning' < 120
-		dclick 'shelf'
-		wait 250
-		#clear loadout
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		gumpresponse 16
-		waitforgump 3232825965
-		#edit loadout
-		gumpresponse 5
-		#heals
-		waitforgump 3232825965
-		gumpresponse 200
-		waitforgump 3232825965
-		#increase heal to 10
-		gumpresponse 215
-		waitforgump 3232825965
-		#cures
-		gumpresponse 201
-		waitforgump 3232825965
-		#increase cure to 10 
-		gumpresponse 216
-		waitforgump 3232825965
-		gumpresponse 209
-		#increase LP to 10
-		waitforgump 3232825965
-		for 9
-			gumpresponse 224
-			waitforgump 3232825965
-		endfor
-		gumpresponse 5
-		waitforgump 3232825965
-		gumpclose
-		pause 650
-	endif
-	wait 2000
-	while skill 'poisoning' < 120
-	#empty backpack in to shelf to prevent bottle overload
-		if weight > 300
-			menu shelf 0
-			wft
-			target 'backpack'
-			wait 250
-			gumpclose
-		endif
-		if not findtype 'Green Potion' true
-			overhead 'No poison! Hitting the shelf!' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'Orange Potion' true
-			overhead 'No cures! Hitting the shelf' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'Yellow Potion' true
-			overhead 'No heals! Hitting the shelf' 55
-			menu shelf 1
-			wait 250
-		elseif not findtype 'katana' true
-			overhead 'Get a flipping katana will ya?'
-			stop
-		endif
-		#heal if hurt
-		if hp < 75 and timer 'heal_p' > 11000
-			hotkey 'drink heal'
-			settimer 'heal_p' 0
-			wait 250
-		endif
-		#cure if poisoned
-		while poisoned
-			hotkey 'drink cure'
-			wait 250
-		endwhile
-		#train poisoning
-		if timer 'poison' > 4600
-			useskill 'poisoning'
-			wft 
-			targettype 'Green Potion'
-			wft 
-			targettype 'katana' true
-			settimer 'poison' 0
-		endif
-	endwhile
+    #setup heal potion and poisoning timer
+    if not timerexists 'heal_p'
+        createtimer 'heal_p'
+    endif
+    if not timerexists 'poison'
+        createtimer 'poison'
+    endif
+    #ensure we have our katana and equip it so it doesn't get put in shelf
+    if not findtype 'katana' true
+        overhead 'Get a flipping katana will ya?'
+        stop
+    else
+        usetype 'katana' true
+    endif
+    #begin training poisoning
+    if skill 'poisoning' < 55
+        overhead 'Get yourself to 55 Poisoning!'
+        stop
+    endif
+    wait 2000
+    overhead "Checking skill level..."
+    #setup shelf to train with greater poison
+    if skill 'poisoning' < 80
+        dclick 'shelf'
+        wait 250
+        #clear loadout
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        #edit loadout
+        gumpresponse 5
+        #heals
+        waitforgump 3232825965
+        gumpresponse 200
+        waitforgump 3232825965
+        #increase heal to 10
+        gumpresponse 215
+        waitforgump 3232825965
+        #cures
+        gumpresponse 201
+        waitforgump 3232825965
+        #increase cure to 10 
+        gumpresponse 216
+        waitforgump 3232825965
+        gumpresponse 207
+        #increase GP by 1 per click
+        waitforgump 3232825965
+        for 9
+            gumpresponse 222
+            waitforgump 3232825965
+        endfor
+        gumpresponse 5
+        waitforgump 3232825965
+        gumpclose
+        pause 650
+    endif
+    wait 2000
+    while skill 'poisoning' < 80
+        #empty backpack in to shelf to prevent bottle overload
+        if weight > 300
+            menu shelf 0
+            wft
+            target 'backpack'
+            wait 250
+            gumpclose 
+        endif
+        if not findtype 'Green Potion' true
+            overhead 'No poison! Hitting the shelf!' 55
+            menu shelf 1
+            wait 200
+        elseif not findtype 'Orange Potion' true
+            overhead 'No cures! Hitting the shelf' 55
+            menu shelf 1
+            wait 200
+        elseif not findtype 'Yellow Potion' true
+            overhead 'No heals! Hitting the shelf' 55
+            menu shelf 1
+            wait 200
+        elseif not findtype 'katana' true
+            overhead 'Get a flipping katana will ya?'
+            stop
+        endif
+        #heal if hurt
+        if hp < 75 and timer 'heal_p' > 11000
+            hotkey 'drink heal'
+            settimer 'heal_p' 0
+            wait 250
+        endif
+        #cure if poisoned
+        while poisoned
+            hotkey 'drink cure'
+            wait 250
+        endwhile
+        #train poisoning
+        if timer 'poison' > 4600
+            useskill 'poisoning'
+            wft 
+            targettype 'Green Potion'
+            wft 
+            targettype 'katana' true
+            settimer 'poison' 0
+        endif
+    endwhile
+    wait 2000
+    overhead "Checking skill level..."
+    if skill 'poisoning' < 100
+        dclick 'shelf'
+        wait 250
+        #clear loadout
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        #edit loadout
+        gumpresponse 5
+        #heals
+        waitforgump 3232825965
+        gumpresponse 200
+        waitforgump 3232825965
+        #increase heal to 10
+        gumpresponse 215
+        waitforgump 3232825965
+        #cures
+        gumpresponse 201
+        waitforgump 3232825965
+        #increase cure to 10 
+        gumpresponse 216
+        waitforgump 3232825965
+        gumpresponse 208
+        #increase DP to 10
+        waitforgump 3232825965
+        for 9
+            gumpresponse 223
+            waitforgump 3232825965
+        endfor
+        gumpresponse 5
+        waitforgump 3232825965
+        gumpclose
+        pause 650
+    endif
+    wait 2000
+    while skill 'poisoning' < 100
+    #empty backpack in to shelf to prevent bottle overload
+        if weight > 300
+            menu shelf 0
+            wft
+            target 'backpack'
+            wait 250
+            gumpclose
+        endif
+        if not findtype 'Green Potion' true
+            overhead 'No poison! Hitting the shelf!' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'Orange Potion' true
+            overhead 'No cures! Hitting the shelf' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'Yellow Potion' true
+            overhead 'No heals! Hitting the shelf' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'katana' true
+            overhead 'Get a flipping katana will ya?'
+            stop
+        endif
+        #heal if hurt
+        if hp < 75 and timer 'heal_p' > 11000
+            hotkey 'drink heal'
+            settimer 'heal_p' 0
+            wait 250
+        endif
+        #cure if poisoned
+        while poisoned
+            hotkey 'drink cure'
+            wait 250
+        endwhile
+        #train poisoning
+        if timer 'poison' > 4600
+            useskill 'poisoning'
+            wft 
+            targettype 'Green Potion'
+            wft 
+            targettype 'katana' true
+            settimer 'poison' 0
+        endif
+    endwhile
+    wait 2000
+    overhead "Checking skill level..."
+    if skill 'poisoning' < 120
+        dclick 'shelf'
+        wait 250
+        #clear loadout
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        gumpresponse 16
+        waitforgump 3232825965
+        #edit loadout
+        gumpresponse 5
+        #heals
+        waitforgump 3232825965
+        gumpresponse 200
+        waitforgump 3232825965
+        #increase heal to 10
+        gumpresponse 215
+        waitforgump 3232825965
+        #cures
+        gumpresponse 201
+        waitforgump 3232825965
+        #increase cure to 10 
+        gumpresponse 216
+        waitforgump 3232825965
+        gumpresponse 209
+        #increase LP to 10
+        waitforgump 3232825965
+        for 9
+            gumpresponse 224
+            waitforgump 3232825965
+        endfor
+        gumpresponse 5
+        waitforgump 3232825965
+        gumpclose
+        pause 650
+    endif
+    wait 2000
+    while skill 'poisoning' < 120
+    #empty backpack in to shelf to prevent bottle overload
+        if weight > 300
+            menu shelf 0
+            wft
+            target 'backpack'
+            wait 250
+            gumpclose 
+        endif
+        if not findtype 'Green Potion' true
+            overhead 'No poison! Hitting the shelf!' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'Orange Potion' true
+            overhead 'No cures! Hitting the shelf' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'Yellow Potion' true
+            overhead 'No heals! Hitting the shelf' 55
+            menu shelf 1
+            wait 250
+        elseif not findtype 'katana' true
+            overhead 'Get a flipping katana will ya?'
+            stop
+        endif
+        #heal if hurt
+        if hp < 75 and timer 'heal_p' > 11000
+            hotkey 'drink heal'
+            settimer 'heal_p' 0
+            wait 250
+        endif
+        #cure if poisoned
+        while poisoned
+            hotkey 'drink cure'
+            wait 250
+        endwhile
+        #train poisoning
+        if timer 'poison' > 4600
+            useskill 'poisoning'
+            wft 
+            targettype 'Green Potion'
+            wft 
+            targettype 'katana' true
+            settimer 'poison' 0
+        endif
+    endwhile
 endwhile
 wait 2000
 if skill poisoning == 120
-	overhead 'You've done it!' 44
-	sysmsg 'You've really done it!' 33
-	stop
+    overhead 'You've done it!' 44
+    sysmsg 'You've really done it!' 33
+    stop
 endif
