@@ -1,5 +1,7 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #health maintenance script with timer
 #UO Outlands online (Other versions of Razor do not support timers)
+#(¯`·._.·(¯`·._.· Begin ·._.·´¯)·._.·´¯)
 overhead 'Health maintenance started!'
 if not timerexists 'bandage'
     createtimer 'bandage'
@@ -49,3 +51,4 @@ while not dead
         wait 250
     endif
 endwhile
+#(¯`·._.·(¯`·._.· End ·._.·´¯)·._.·´¯)

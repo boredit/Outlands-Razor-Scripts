@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #example: continuously "make last" until societies job is completed
 #manually craft one of the society job items then run script
 #check for saws

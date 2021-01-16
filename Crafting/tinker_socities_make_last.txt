@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #for tinker societies
 #manually craft one of the society job item then play
 #check for saws

@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #train discordance with flute | flute type: 10245
 if insysmsg 'What instrument'
     if findtype '10245' true

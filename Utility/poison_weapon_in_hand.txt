@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #sample script for poisoning weapon in hand
 #clear sysmsg from last manual application
 if insysmsg 'You apply the poison.'

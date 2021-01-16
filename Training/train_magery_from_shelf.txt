@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #example: train magery from your storage shelf
 #1.)create a variable on the Scripts>Options> tab named 'shelf' and target your shelf
 #2.)set current loadout to include 10 (minimul) of each reagent.

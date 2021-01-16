@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #simple hiding and stealth trainer | could be more efficient but isn't really needed
 if skill hiding < 100
     useskill 'hiding'

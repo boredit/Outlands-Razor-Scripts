@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #Train Alchemy from 90-120
 #place empty keg and empty bottle in backpack
 #Set variable named "shelf" on options tab and target your shelf.

@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #train taste identification
 if skill 'taste identification' < 100
 	skill 'tasteidentification'

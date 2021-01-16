@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 ###                                                     ###
 ###fishing macro, captcha resilient.                    ###
 ###equip a fishing pole and press play  				###

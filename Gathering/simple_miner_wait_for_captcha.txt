@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #simple mining macro | captcha resilient
 #equip a pickaxe
 if rhandempty

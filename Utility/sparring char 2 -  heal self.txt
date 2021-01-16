@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #sparring dummy heal script
 if not timerexists 'bandage'
 	createtimer 'bandage'

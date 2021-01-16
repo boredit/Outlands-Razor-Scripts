@@ -1,3 +1,4 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
 #put lockpicks, trap tools and training box in backpack
 #to go beyond 100 change "100" to "120" or anywhere in between
 #stop conditions
