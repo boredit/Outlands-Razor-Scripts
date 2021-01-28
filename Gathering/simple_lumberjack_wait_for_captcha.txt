@@ -36,7 +36,7 @@ while not dead
         wft
         target 'self'
     endif
-    #stop trying to mine when the node is exhausted
+    #stop trying to chop when the node is exhausted
     if insysmsg 'You do not see'
         overhead 'Move along! Move along!' 55
     stop
