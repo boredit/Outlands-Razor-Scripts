@@ -1,0 +1,41 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
+#simple mining macro | captcha resilient
+#equip a pickaxe
+if rhandempty
+dclicktype '3718'
+wait 1000
+endif
+#use pickaxe for the first time
+hotkey 'use item in hand'
+wft
+target 'self'
+wait 500
+#begin captcha resilient loop
+while not dead
+    #world save pause
+    if insysmsg 'world is saving'
+        wait 4000
+    endif
+    #stop if over weight | best to adjust to (maxweight - 10)
+    if weight >= 580
+        overhead 'You are over weight!' 55
+        stop
+    endif
+    #captcha resilient use of pickaxe
+    if insysmsg 'dig some'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    elseif insysmsg 'fail'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    elseif insysmsg "You can't mine that"
+        overhead 'No ore here! Move! Move! Move!' 55
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    endif
+wait 500    
+endwhile
+
