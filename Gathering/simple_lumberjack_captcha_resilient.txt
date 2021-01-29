@@ -17,8 +17,9 @@ while not dead
         wait 4000
     endif
     #turn logs in to boards
-    while findtype 7133 
-        usetype 7133
+    while findtype 7133 true
+        usetype 7133 true
+        wait 200
     endwhile
     #stop if over weight
     if weight >= 580
@@ -36,7 +37,7 @@ while not dead
         wft
         target 'self'
     endif
-    #stop trying to mine when the node is exhausted
+    #stop trying to chop when the node is exhausted
     if insysmsg 'You do not see'
         overhead 'Move along! Move along!' 55
     stop
