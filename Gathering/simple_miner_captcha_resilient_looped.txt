@@ -1,0 +1,45 @@
+#°º¤ø,¸¸,øThe Siv Scriptsø¤°º¤ø,¸¸
+#a simple lumberjack macro
+#equip a hatchet
+if lhandempty
+dclicktype '3908'
+wait 1000
+endif
+#use hatchet for the first time
+hotkey 'use item in hand'
+wft
+target 'self'
+wait 500
+#begin captcha resilient loop
+while not dead
+    #world save pause
+    if insysmsg 'world is saving'
+        wait 4000
+    endif
+    #turn logs in to boards
+    while findtype 7133 true
+        usetype 7133 true
+        wait 250
+    endwhile
+    #stop if over weight
+    if weight >= 580
+        overhead 'You are over weight!' 55
+        stop
+    endif
+    #captcha resilient use of hatchet
+    if insysmsg 'chop some'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    elseif insysmsg 'fail'
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    elseif insysmsg 'You do not'
+        overhead 'Move along! Move along!' 55
+        hotkey 'use item in hand'
+        wft
+        target 'self'
+    endif
+    wait 600
+endwhile
