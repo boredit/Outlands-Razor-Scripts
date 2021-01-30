@@ -1,0 +1,47 @@
+#make and shelf greater poison
+#manually create variable named 'empty_keg' and target keg
+#manually create a variable named 'shelf' and target
+#check for mortars
+
+if not findtype 'mortar and pestle'
+    overhead 'Out of tools!'
+    menu shelf 1
+endif
+#check for nightshade
+if count 'nightshade' < 9
+    overhead 'Out of reagent!'
+    menu shelf 1
+endif
+#stop when society job completed
+if insysmsg 'have completed'
+    overhead 'Society job completed!' 88
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    stop
+endif
+#drops an pot on the keg to get started
+if findtype 'Green Potion' true
+    lifttype 'Green Potion' 1
+    drop 'empty_keg' -1 -1 0
+    wait 500
+endif
+if insysmsg 'not hold any more'
+    overhead 'Stocking shelf...
+    lifttype 'keg' 1
+    drop 'shelf' -1 -1 0
+    overhead 'keg dropped'
+    wait 500
+endif
+#make potion
+dclicktype 'mortar and pestle'
+waitforgump 949095101
+gumpresponse 106
+waitforgump 949095101
+gumpresponse 202
+waitforgump 949095101
+waitforgump 949095101
+pause 2000
+gumpclose
+#Uhh... loop.
+loop
