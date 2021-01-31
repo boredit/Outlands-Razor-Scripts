@@ -51,7 +51,7 @@ if hits < 69
     wft
     target 'self'
     wait 2000
-    elseif hits > 69 and skill 'magery' < 101
+    elseif hits > 69 and skill 'magery' < 100
     cast 'air elemental'
     wait 500
     if insysmsg 'too many followers'
