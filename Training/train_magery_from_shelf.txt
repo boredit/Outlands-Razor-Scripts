@@ -53,15 +53,11 @@ if hits < 69
     wait 2000
     elseif hits > 69 and skill 'magery' < 100
     cast 'air elemental'
-    wait 500
-    if insysmsg 'too many followers'
+    wait 6750
+    if findtype '13' true
         say 'an air elemental release'
         wait 500
-        cast 'Air Elemental'
-        wait 6250
-    else
-        wait 6520
-endif
+     endif
 elseif hits > 69 and skill 'magery' == 100
     overhead 'Magery Complete!'
     stop
