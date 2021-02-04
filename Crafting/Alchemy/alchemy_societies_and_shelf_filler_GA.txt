@@ -14,7 +14,7 @@ if not findtype 'mortar and pestle' true
     menu shelf 1
 endif
 #check for reagent
-if count 'bloodmoss' < 6
+if count 'blood moss' < 6
     overhead 'Out of reagent!'
     menu shelf 1
 endif
