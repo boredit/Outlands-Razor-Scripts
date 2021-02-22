@@ -2,17 +2,13 @@
 #example: train magery from your storage shelf
 #1.)create a variable on the Scripts>Options> tab named 'shelf' and target your shelf
 #2.)set current loadout to include at least 10 of each reagent.
-#3.)on Display/Counters, remove the " ' " from "Spider's Silk" so it appears "Spiders Silk"
-#4.)on the same tab, ensure that the counters for SS, BP, and MR are enabled.
-#Note: the count command does not process punctuation in "" like steam did
+#3.)on the same tab, ensure that the counters for SS, BP, and MR are enabled.
 ###########################################################################################
 #journal cleanup
 if insysmsg 'enter a meditative'
 endif
-if insysmsg 'too many followers'
-endif
 #count regs and restock from shelf
-if count 'Spiders Silk' < 5
+if count "Spider's Silk" < 5
     menu shelf 1
 elseif count 'Black Pearl' < 5
     menu shelf 1
