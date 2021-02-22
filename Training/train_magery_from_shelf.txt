@@ -30,24 +30,24 @@ if hits < 69
     cast 'greater heal'
     wft
     target 'self'
-    elseif hits > 69 and skill 'magery' < 40
+elseif hits > 69 and skill 'magery' < 40
     overhead 'Train Magery up to 50 at a vendor'
     stop
-    elseif hits > 69 and skill 'magery' < 60
+elseif hits > 69 and skill 'magery' < 60
     cast 'mana drain'
     wft
     target 'self'
-    elseif hits > 69 and skill 'magery' < 70
+elseif hits > 69 and skill 'magery' < 70
     cast 'energy bolt'
     wft
     target 'self'
     wait 1800
-    elseif hits > 69 and skill 'magery' < 85
+elseif hits > 69 and skill 'magery' < 85
     cast 'flamestrike'
     wft
     target 'self'
     wait 2000
-    elseif hits > 69 and skill 'magery' < 100
+elseif hits > 69 and skill 'magery' < 100
     cast 'air elemental'
     wait 6750
     if findtype '13' true
