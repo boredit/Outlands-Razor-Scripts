@@ -7,8 +7,6 @@ wait 1000
 endif
 #use pickaxe for the first time
 hotkey 'use item in hand'
-wft
-target 'self'
 wait 500
 #begin captcha resilient loop
 while not dead
@@ -24,17 +22,11 @@ while not dead
     #captcha resilient use of pickaxe
     if insysmsg 'dig some'
         hotkey 'use item in hand'
-        wft
-        target 'self'
     elseif insysmsg 'fail'
         hotkey 'use item in hand'
-        wft
-        target 'self'
-    elseif insysmsg "You can't mine that"
+    elseif insysmsg "You do not see"
         overhead 'No ore here! Move! Move! Move!' 55
         hotkey 'use item in hand'
-        wft
-        target 'self'
     endif
 wait 500    
 endwhile

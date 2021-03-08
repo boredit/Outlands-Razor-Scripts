@@ -10,8 +10,6 @@ wait 1000
 endif
 #use fishing pole for the first time | prevents having to manually fish the first time
 hotkey 'use item in hand'
-wft
-target 'self'
 wait 500
 #begin captcha resilient loop
 while not dead
@@ -27,16 +25,12 @@ while not dead
     #captcha resilient use of fishing pole
     if insysmsg 'fish a while'
         hotkey 'use item in hand'
-        wft
     elseif insysmsg 'you catch'
         hotkey 'use item in hand'
-        wft
     elseif insysmsg 'you retrieve'
         overhead 'You've got a net!' 55
         hotkey 'use item in hand'
-        wft
     endif
-    target 'self'
     #stop trying to fish when the node is exhausted
     if insysmsg 'any harvestable'
         overhead 'You've caught all the fish!' 55

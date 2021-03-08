@@ -7,8 +7,6 @@ wait 1000
 endif
 #use pickaxe for the first time
 hotkey 'use item in hand'
-wft
-target 'self'
 wait 500
 #begin captcha resilient loop
 while not dead
@@ -24,16 +22,12 @@ while not dead
     #captcha resilient use of pickaxe
     if insysmsg 'dig some'
         hotkey 'use item in hand'
-        wft
-        target 'self'
     endif
     if insysmsg 'fail'
         hotkey 'use item in hand'
-        wft
-        target 'self'
     endif
     #stop trying to mine when the node is exhausted
-    if insysmsg "You can't mine that"
+    if insysmsg "You do not see"
         overhead 'No ore here! Move! Move! Move!' 55
         stop
     endif

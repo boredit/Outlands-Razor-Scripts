@@ -7,8 +7,6 @@ wait 1000
 endif
 #use hatchet for the first time
 hotkey 'use item in hand'
-wft
-target 'self'
 wait 500
 #begin captcha resilient loop
 while not dead
@@ -29,18 +27,14 @@ while not dead
     #captcha resilient use of hatchet
     if insysmsg 'chop some'
         hotkey 'use item in hand'
-        wft
-        target 'self'
     endif
     if insysmsg 'fail'
         hotkey 'use item in hand'
-        wft
-        target 'self'
     endif
     #stop trying to chop when the node is exhausted
     if insysmsg 'You do not see'
         overhead 'Move along! Move along!' 55
-    stop
+		stop
     endif
 wait 500    
 endwhile
