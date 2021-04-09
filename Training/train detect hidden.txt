@@ -3,6 +3,9 @@
 if skill 'detecting hidden' < 100
     useskill 'detectinghidden'
     wft
-    targetrelloc 0 1
+    target 'backpack'
     wait 10000
+elseif skill 'detecting hidden' == 100
+    stop
+endif
 loop
