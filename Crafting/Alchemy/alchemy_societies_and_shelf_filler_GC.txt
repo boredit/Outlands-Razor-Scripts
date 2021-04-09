@@ -18,6 +18,11 @@ if count 'garlic' < 6
     overhead 'Out of reagent!'
     menu shelf 1
 endif
+#check for bottles
+if not findtype '3854'
+    overhead 'Grabbing bottles!'
+    menu shelf 1
+endif
 #stop if a society job is completed
 if insysmsg 'have completed'
     overhead 'Society job completed!' 88
