@@ -47,9 +47,7 @@ while not dead
         target 'self'
     elseif insysmsg 'You do not'
         overhead 'Move along! Move along!' 55
-        hotkey 'use item in hand'
-        wft
-        target 'self'
+        stop
     endif
     wait 600
 endwhile
