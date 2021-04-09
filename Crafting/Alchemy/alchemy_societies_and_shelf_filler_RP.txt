@@ -12,6 +12,11 @@ if count 'nightshade' < 9
     overhead 'Out of reagent!'
     menu shelf 1
 endif
+#check for bottles
+if not findtype '3854' 'backpack'
+    overhead 'Grabbing bottles!'
+    menu shelf 1
+endif
 #stop when society job completed
 if insysmsg 'have completed'
     overhead 'Society job completed!' 88
