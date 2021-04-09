@@ -19,7 +19,7 @@ if count 'garlic' < 6
     menu shelf 1
 endif
 #check for bottles
-if not findtype '3854'
+if not findtype '3854' 'backpack'
     overhead 'Grabbing bottles!'
     menu shelf 1
 endif
