@@ -5,5 +5,7 @@ if skill 'taste identification' < 100
 	waitfortarget
 	target 'backpack'
 	pause 5000
+elseif skill 'taste identification' == 100
+	stop
 endif
 loop
