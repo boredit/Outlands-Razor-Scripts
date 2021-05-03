@@ -11,17 +11,17 @@
 #check for mortars
 if not findtype 'mortar and pestle' true
     overhead 'Out of tools!'
-    menu shelf 1
+    menu 'shelf' 1
 endif
 #check for reagent
 if count 'ginseng' < 6
     overhead 'Out of reagent!'
-    menu shelf 1
+    menu 'shelf' 1
 endif
 #check for bottles
 if not findtype '3854' 'backpack'
     overhead 'Grabbing bottles!'
-    menu shelf 1
+    menu 'shelf' 1
 endif
 #stop when society job completed
 if insysmsg 'have completed'
