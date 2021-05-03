@@ -14,7 +14,7 @@ if not findtype 'mortar and pestle' true
     menu shelf 1
 endif
 #check for reagent
-if count 'spiders silk' < 6
+if count "spider's silk" < 6
     overhead 'Out of reagent!'
     menu shelf 1
 endif
